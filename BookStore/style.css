@@ -1,0 +1,247 @@
+/* ======================== */
+/* 🌐 Design System - Variables */
+/* ======================== */
+:root {
+    /* 🎨 Colors */
+    --primary-color: #ff6b6b;
+    --color-background: #f3f1f1;
+    --color-surface: #ffffff;
+    --color-text: #141414;
+    --color-muted: #454545;
+
+    /* 🔤 Typography */
+    --font-family-base: 'Poppins', sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 2rem;
+    --line-height-base: 1.6;
+
+    /* 📐 Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* 🔲 Layout */
+    --max-width-container: 1200px;
+    --container-padding: 1rem;
+
+    /* 🎁 Misc */
+    --border-radius: 0.5rem;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ======================== */
+/* 🧼 Reset & Base */
+/* ======================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-base);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* ======================== */
+/* 📦 Base Layout Components */
+/* ======================== */
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+h1 {
+    font-size: var(--font-size-xl);
+    color: var(--color-surface);
+}
+
+h2 {
+    font-size: var(--spacing-lg);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--color-surface);
+    box-shadow: var(--box-shadow);
+    z-index: 100;
+}
+
+.header-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.header-link {
+    position: relative;
+    font-size: var(--font-size-sm);
+    transform: var(--transition);
+}
+
+.header-link::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.header-link:hover::after {
+    width: 100%;
+}
+
+/* Hero */
+.hero {
+    margin-top: 70px;
+    height: 600px;
+    background-color: var(--primary-color);
+}
+
+.home-contents {
+    display: flex;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.home-text {
+    color: var(--color-surface);
+    font-weight: 400;
+}
+
+.btn {
+    background: var(--color-surface);
+    color: var(--primary-color);
+    width: 200px;
+    margin: var(--spacing-lg) auto;
+    padding: .9rem 2.2rem;
+    border: none;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    box-shadow: var(--box-shadow);
+    background-color: #fcf9f9;
+    transform: translateY(-4px);
+}
+
+.featured-books {
+    height: 67Opx;
+}
+
+.books-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xs);
+}
+
+.book-card img {
+    max-width: 320px;
+    border: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.book-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.book-card:hover {
+    box-shadow: var(--box-shadow);
+    transform: translateY(-4px);
+}
+
+.book-infos {
+    background-color: var(--color-surface);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: var(--spacing-md);
+    line-height: 1.8rem;
+}
+
+.book-infos p {
+    color: var(--color-muted);
+}
+
+.price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+footer {
+    margin-top: var(--spacing-xl);
+    background-color: #141414;
+    color: rgba(236, 228, 214, 0.596);
+}
+
+.footer-contents {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.footer-link {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
